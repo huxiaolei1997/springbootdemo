@@ -6,7 +6,7 @@ mvn spring-boot:run即可启动springboot
 java -jar 生成的jar包的名字就可以启动spring-boot项目
 # 不同环境使用不同的配置文件
 application.yml基本配置文件，可以在里面指定使用的是**开发环境**还是生产环境的配置文件，application-dev.yml代表开发环境，application-prod代表生产环境<br/>
-**java -jar 生成的jar包的名字 --spring.profiles.active=prod** 启动生产环境
-**java -jar 生成的jar包的名字 --spring.profiles.active=dev** 启动开发环境
-以上这些都需要先编译生成jar才可进行，application-dev.yml和application-prod.yml需要自己**新建**
+**java -jar 生成的jar包的名字 --spring.profiles.active=prod** 启动生产环境  
+**java -jar 生成的jar包的名字 --spring.profiles.active=dev** 启动开发环境  
+以上这些步骤都需要先**编译生成jar**才可进行，application-dev.yml和application-prod.yml需要自己**新建**
 idea 默认生成的是**application.properties**格式的文件，**.yml**格式的文件需要自己新建
