@@ -11,6 +11,8 @@ public class ManController {
     @Autowired
     private ManRepository manRepository;
 
+    @Autowired
+    private ManService manService;
     /**
      * 查询所有的manList
      * @return
@@ -67,5 +69,10 @@ public class ManController {
     @DeleteMapping(value = "/man/{id}")
     public void manDelete(@PathVariable("id") Integer id) {
         manRepository.deleteById(id);
+    }
+
+    @PostMapping(value = "/man/two")
+    public void manTwo() {
+        manService.insertTwo();
     }
 }

@@ -27,4 +27,5 @@
  | GET | /man/id | 通过id查询一个man |  
  | PUT | /man/id | 通过id更新一个man |  
  | DELETE | /man/id | 通过id删除一个man |
+ # 事务管理
  
