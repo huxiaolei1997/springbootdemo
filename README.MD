@@ -9,4 +9,8 @@
   **java -jar 生成的jar包的名字 --spring.profiles.active=prod** 启动生产环境  
  **java -jar 生成的jar包的名字 --spring.profiles.active=dev** 启动开发环境  
  以上这些步骤都需要先**编译生成jar**才可进行，application-dev.yml和application-prod.yml需要自己**新建**
- idea 默认生成的是**application.properties**格式的文件，**.yml**格式的文件需要自己新建
+ idea 默认生成的是**application.properties**格式的文件，**.yml**格式的文件需要自己新建  
+ # Controller的使用
+ @Controller 处理http请求
+ @RestController Spring4之后新加的注解，原来返回json需要@ResponseBody加@Controller
+ @RequestMapping 配置url映射
