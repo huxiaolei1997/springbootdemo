@@ -28,4 +28,5 @@
  | PUT | /man/id | 通过id更新一个man |  
  | DELETE | /man/id | 通过id删除一个man |
  # 事务管理
+ 这里需要注意的是如果建表时使用的引擎是 **MyISAM**，那么是不支持事务回滚的，需要改为 **InnoDB**
  
