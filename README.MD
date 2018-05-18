@@ -1,6 +1,6 @@
 # springboot的三种启动方式
-  1. 右键程序入口，启动
-  2. 通过命令行启动，首先进入到springboot的工程文件目录下，然后输入 **mvn spring-boot:run** 即可启动springboot
+ 1. 右键程序入口，启动
+ 2. 通过命令行启动，首先进入到springboot的工程文件目录下，然后输入 **mvn spring-boot:run** 即可启动springboot
  3. 通过jar包启动，首先先编译spring-boot项目，输入 **mvn install** 即可，编译完成之后，进入 **target** 目录，在命令行输入
   **java -jar 生成的jar包的名字** 就可以启动spring-boot项目
 # 不同环境使用不同的配置文件
@@ -19,4 +19,12 @@
  # 数据库操作
  使用了Spring-Data-Jpa
  JPA(Java Persistence API)定义了一系列对象持久化的标准，目前实现这一规范的产品有Hiberna、TopLink等  
+ # RESTful API设计
+ | 请求类型 | 请求路径 | 功能 |  
+ | :-: | :-: | :-: |  
+ | GET | /man | 获取man列表 |  
+ | POST | /man | 创建一个man |  
+ | GET | /man/id | 通过id查询一个man |  
+ | PUT | /man/id | 通过id更新一个man |  
+ | DELETE | /girls/id | 通过id删除一个man |
  
