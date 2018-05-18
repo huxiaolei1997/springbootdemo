@@ -17,3 +17,7 @@
  @PathVariable 获取url中的数据  
  @RequestParam 获取请求参数中的值  
  @GetMapping 组合注解  
+ # 数据库操作
+ 使用了Spring-Data-Jpa
+ JPA(Java Persistence API)定义了一系列对象持久化的标准，目前实现这一规范的产品有Hiberna、TopLink等  
+ 
