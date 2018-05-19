@@ -1,5 +1,7 @@
-package com.imooc.springbootdemo;
+package com.imooc.springbootdemo.service;
 
+import com.imooc.springbootdemo.repository.ManRepository;
+import com.imooc.springbootdemo.domain.Man;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

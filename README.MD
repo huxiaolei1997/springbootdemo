@@ -29,4 +29,7 @@
  | DELETE | /man/id | 通过id删除一个man |
  # 事务管理
  这里需要注意的是如果建表时使用的引擎是 **MyISAM**，那么是不支持事务回滚的，需要改为 **InnoDB**
+ # SpringBoot AOP
+ 新建一个切面类HttpAspect
+ @Before()等注解，面向切面编程
  

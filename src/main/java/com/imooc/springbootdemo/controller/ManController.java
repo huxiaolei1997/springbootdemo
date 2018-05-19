@@ -1,8 +1,13 @@
-package com.imooc.springbootdemo;
+package com.imooc.springbootdemo.controller;
 
+import com.imooc.springbootdemo.domain.Man;
+import com.imooc.springbootdemo.repository.ManRepository;
+import com.imooc.springbootdemo.service.ManService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -24,15 +29,17 @@ public class ManController {
 
     /**
      * 添加一个 man
-     * @param age
-     * @param name
      * @return
      */
     @PostMapping(value = "/man")
-    public Man manAdd(@RequestParam("age") Integer age, @RequestParam("name") String name) {
-        Man man = new Man();
-        man.setAge(age);
-        man.setName(name);
+    public Man manAdd(@Valid Man man, BindingResult bindingResult) {
+        //Man man = new Man();
+        if (bindingResult.hasErrors()) {
+            System.out.println(bindingResult.getFieldError().getDefaultMessage());
+            return null;
+        }
+        man.setAge(man.getAge());
+        man.setName(man.getName());
 
         return manRepository.save(man);
     }

@@ -1,4 +1,4 @@
-package com.imooc.springbootdemo;
+package com.imooc.springbootdemo.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;

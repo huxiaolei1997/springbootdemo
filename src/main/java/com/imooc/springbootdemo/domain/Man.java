@@ -1,8 +1,9 @@
-package com.imooc.springbootdemo;
+package com.imooc.springbootdemo.domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.validation.constraints.Min;
 
 @Entity
 public class Man {
@@ -12,6 +13,7 @@ public class Man {
 
     private String name;
 
+    @Min(value = 18, message = "未成年人禁止入内")
     private Integer age;
 
     public Man() {
