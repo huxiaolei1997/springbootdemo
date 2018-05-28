@@ -3,6 +3,8 @@ package com.imooc.springbootdemo.controller;
 import com.imooc.springbootdemo.domain.Man;
 import com.imooc.springbootdemo.repository.ManRepository;
 import com.imooc.springbootdemo.service.ManService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +14,7 @@ import java.util.List;
 
 @RestController
 public class ManController {
-
+    private final static Logger logger = LoggerFactory.getLogger(ManController.class);
     @Autowired
     private ManRepository manRepository;
 
@@ -24,6 +26,7 @@ public class ManController {
      */
     @GetMapping(value = "/man")
     public List<Man> manList() {
+        logger.info("man");
         return manRepository.findAll();
     }
 
