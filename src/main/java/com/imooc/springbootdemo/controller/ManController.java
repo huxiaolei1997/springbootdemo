@@ -1,8 +1,10 @@
 package com.imooc.springbootdemo.controller;
 
 import com.imooc.springbootdemo.domain.Man;
+import com.imooc.springbootdemo.domain.Result;
 import com.imooc.springbootdemo.repository.ManRepository;
 import com.imooc.springbootdemo.service.ManService;
+import com.imooc.springbootdemo.utils.ResultUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,16 +37,22 @@ public class ManController {
      * @return
      */
     @PostMapping(value = "/man")
-    public Man manAdd(@Valid Man man, BindingResult bindingResult) {
+    public Result<Man> manAdd(@Valid Man man, BindingResult bindingResult) {
         //Man man = new Man();
         if (bindingResult.hasErrors()) {
             System.out.println(bindingResult.getFieldError().getDefaultMessage());
-            return null;
+            //Result result = new Result();
+            //result.setCode(1);
+            //result.setMsg(bindingResult.getFieldError().getDefaultMessage());
+            return ResultUtil.error(1, bindingResult.getFieldError().getDefaultMessage());
         }
         man.setAge(man.getAge());
         man.setName(man.getName());
-
-        return manRepository.save(man);
+//        Result result = new Result();
+//        result.setCode(0);
+//        result.setMsg("成功");
+//        result.setData(manRepository.save(man));
+        return ResultUtil.success(manRepository.save(man));
     }
 
     // 查询一个man（通过 id 来查询）

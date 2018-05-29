@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class Man {
@@ -11,6 +12,7 @@ public class Man {
     @GeneratedValue
     private Integer id;
 
+    @NotNull(message = "姓名必填")
     private String name;
 
     @Min(value = 18, message = "未成年人禁止入内")
